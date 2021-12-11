@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+h1{
+  text-align: left;
+  size: 100px;
+  margin: 0px;
+  margin-top: 2%;
+}
+
+
+img.dinologo{
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  /* padding: 5px; */
+  width: 100px;
+  float: left;
+}
+
+.moto{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+p{
+  font-size: 30px;
+  color: white;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  /* font-weight: 200; */
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+  /* font-size-adjust: ex-height 0.58; */
+}
+
+.navbar {
+  display: flex;
+  max-width: auto;
+  margin: 0;
+  /* margin: 0 auto; */
+  /* border-bottom: 1px solid #f2f2f2; */
+}
+/* .navbar h1 {
+  color: #f1356d;
+} */
+.navbar .links {
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+}
+.navbar a {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 10px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+/* .content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+} */
