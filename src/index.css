@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   font-family: "Quicksand";
@@ -32,7 +33,7 @@ img.dinologo{
   color: white;
 }
 
-p{
+p.moto{
   font-size: 30px;
   color: white;
   word-spacing: 10px;
@@ -49,7 +50,7 @@ p{
 .navbar {
   display: flex;
   max-width: auto;
-  margin: 0;
+  padding: 0;
   /* margin: 0 auto; */
   /* border-bottom: 1px solid #f2f2f2; */
 }
@@ -58,6 +59,7 @@ p{
   display: flex;
   text-align: center;
   margin-left: auto;
+  margin-top: -2%;
 }
 .navbar a {
   font-size: 20px;
@@ -68,4 +70,17 @@ p{
 }
 .navbar a:hover {
   color: #f1356d;
+}
+
+img.card-img-top{
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.card{
+  width:300px;
+  padding: 20px;
+}
+p.card-text{
+  width: 300px;
 }
