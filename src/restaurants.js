@@ -1,8 +1,8 @@
 import './index.css';
 import { Card, CardGroup } from 'react-bootstrap';
-import dine from './dine.jpg'
-import dine3 from './dine3.jpg'
-import dine4 from './dine4.jpg'
+import dine from './images/dine.jpg'
+import dine3 from './images/dine3.jpg'
+import dine4 from './images/dine4.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 
 const restaurant = () => {

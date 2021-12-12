@@ -1,4 +1,4 @@
-import dinoLogo from './dinoLogo.png';
+import dinoLogo from './images/dinoLogo.png';
 
 const navbar = () => {
     return (
