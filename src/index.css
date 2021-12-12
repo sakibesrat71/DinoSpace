@@ -18,7 +18,6 @@ h1{
   margin-top: 2%;
 }
 
-
 img.dinologo{
   border: 1px solid #ddd;
   border-radius: 50%;
@@ -46,7 +45,13 @@ p.moto{
   transform: translate(-50%, -50%);
   /* font-size-adjust: ex-height 0.58; */
 }
-
+Form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-size-adjust: ex-height 0.58; */
+}
 .navbar {
   display: flex;
   max-width: auto;
@@ -93,13 +98,7 @@ p.card-text{
 .card-title{
   padding-top: 10px;
 }
-button:disabled {
 
-}
-
-a.carousel-control-prev{
-  right: 0%;
-}
 span{
   color: white;
 }
