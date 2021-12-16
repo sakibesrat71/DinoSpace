@@ -8,7 +8,7 @@ const navbar = () => {
             <h1>DinoSpace</h1>
             <div className="links">
                 <a href="#">Sign Up</a>
-                <a href="/logIn">Sign In</a>
+                <a href="/LogIn">Sign In</a>
                 <a href="/">Contact Us</a>
             </div>
         </div>
