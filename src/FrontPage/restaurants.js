@@ -1,4 +1,4 @@
-import './index.css';
+import '../css/index.css';
 import { Card, CardGroup } from 'react-bootstrap';
 import dine from './images/dine.jpg'
 import dine3 from './images/dine3.jpg'
@@ -7,6 +7,8 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const restaurant = () => {
     return (
+        <div className="restaurant">
+        <h4>Popular restaurants around your area</h4>
         <Carousel>
             <Carousel.Item>
                 <CardGroup>
@@ -111,6 +113,7 @@ const restaurant = () => {
                 </CardGroup>
             </Carousel.Item>
         </Carousel>
+        </div>
     );
 }
 
