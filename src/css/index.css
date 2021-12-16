@@ -77,6 +77,12 @@ Form{
   color: #f1356d;
 }
 
+h4{
+  padding-top: 40px;
+  /* padding:10px; */
+  padding-left: 60px;
+}
+
 img.card-img-top{
   width: 300px;
   height: 200px;
