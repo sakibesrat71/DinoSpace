@@ -25,17 +25,17 @@ img.dinologo{
   width: 100px;
   float: left;
 }
-
-.moto{
-  position: relative;
-  text-align: center;
-  color: white;
+@media screen and (max-width: 600px) {
+  p.moto {
+    font-size: 10px;
+  }
 }
 
 p.moto{
   font-size: 30px;
   color: white;
   word-spacing: 10px;
+  text-align: center;
   letter-spacing: 2px;
   font-weight: bold;
   position: absolute;
@@ -45,6 +45,14 @@ p.moto{
   transform: translate(-50%, -50%);
   /* font-size-adjust: ex-height 0.58; */
 }
+
+@media screen and (max-width: 600px) {
+  p.moto {
+    font-size: 15px;
+  }
+}
+
+
 Form{
   position: absolute;
   top: 50%;

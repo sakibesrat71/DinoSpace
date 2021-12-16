@@ -1,6 +1,6 @@
 import './css/index.css';
 import Home from './FrontPage/Home';
-import LogIn from './LogIn';
+import LogIn from './auth/LogIn';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/logIn">
+        <Route path="/LogIn">
           <LogIn />
         </Route>
       </Switch>
