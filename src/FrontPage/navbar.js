@@ -7,7 +7,7 @@ const navbar = () => {
             <img class="dinologo" src={dinoLogo} />
             <h1>DinoSpace</h1>
             <div className="links">
-                <a href="#">Sign Up</a>
+                <a href="/SignUp">Sign Up</a>
                 <a href="/LogIn">Sign In</a>
                 <a href="/">Contact Us</a>
             </div>
