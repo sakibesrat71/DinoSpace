@@ -53,13 +53,17 @@ p.moto{
 }
 
 
-Form{
+Form.d-flex {
   position: absolute;
   top: 50%;
   left: 50%;
+  /* right: 50%; */
   transform: translate(-50%, -50%);
   /* font-size-adjust: ex-height 0.58; */
 }
+
+/* */
+
 .navbar {
   display: flex;
   max-width: auto;

@@ -3,6 +3,7 @@ import Navbar from './navbar';
 import Footer from './Footer.js';
 import Searchbar from './search';
 import Restaurant from './restaurants';
+import '../css/index.css';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
