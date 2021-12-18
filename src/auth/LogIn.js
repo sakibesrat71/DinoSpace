@@ -1,4 +1,4 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container, Row, Col} from "react-bootstrap";
 import img from "./login2.jpg";
 import "../css/auth.css";
 import userIcon from "./user.png";
@@ -11,13 +11,17 @@ const LogIn = () => {
         Aos.init({ duration: 1500 });
     }, []);
     return (
-        <div className="login">
-            <div data-aos="fade-right" className="fade">
+        <Container>
+            <Row>
+                <Col>
+                <div data-aos="fade-right" className="fade">
                 <div className="left">
                     <img className="bg" src={img} />
                 </div>
             </div>
-            <div className="right">
+                </Col>
+                <Col>
+                <div className="right">
                 <Form>
                     <div data-aos="fade-up" className="fade">
                         <div className="text-center">
@@ -42,7 +46,9 @@ const LogIn = () => {
                 </Form>
             </div>
 
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

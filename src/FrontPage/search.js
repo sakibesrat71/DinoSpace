@@ -1,6 +1,8 @@
+import '../css/index.css';
 import {Form, FormControl, Button} from 'react-bootstrap';
 const searchbar = () => {
     return (
+      <div className="form">
         <Form className="d-flex">
         <FormControl
           type="search"
@@ -10,6 +12,8 @@ const searchbar = () => {
         />
         <Button variant="outline-success">Search</Button>
       </Form> 
+      </div>
+        
       );
 }
  

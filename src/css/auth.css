@@ -1,31 +1,21 @@
-.login{
-    display: flex;
-    flex-direction: column;
+.container{
+    margin:0;
+    padding: 0;
 }
-
-.bg{
-    width: 50%;
-    height: 50%;
+.col{
+    padding: 0;
+    /* background-color: rgb(41, 39, 39); */
 }
-
 .right{
-    right:0;
-    display: block;
-    background-color: rgb(75, 75, 75);
+    margin-top:20%;
+    margin-left:40%;
 }
 .user{
-    /* margin-top: 20%; */
     width: 80px;
     height:80px;
     margin-bottom:2rem;
     /* padding-left: 20px; */
 }
-
-
-  Form{
-      left: 75%;
-  }
-
-  .form-control{
-      width: 130%;
-  }
+.form-control{
+    width:100%;
+}
