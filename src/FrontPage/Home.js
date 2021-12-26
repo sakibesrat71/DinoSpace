@@ -2,7 +2,7 @@ import dine from './images/dine2.jpg';
 import Navbar from './navbar';
 import Footer from './Footer.js';
 import Searchbar from './search';
-import Restaurant from './restaurants';
+import Restaurant from '../restaurant/restaurants';
 import '../css/index.css';
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -24,7 +24,7 @@ const Home = () => {
             <div data-aos="fade-up" className="fade">
                 <Footer />
             </div>
-            
+
         </div>
     );
 }

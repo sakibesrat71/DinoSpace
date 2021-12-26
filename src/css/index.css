@@ -121,3 +121,7 @@ span{
   color: white;
 }
 .carousel-indicators { visibility: hidden; }
+
+.carousel-control-next, .carousel-control-prev {
+width: 10%;
+}

@@ -2,9 +2,8 @@ import dinoLogo from './images/dinoLogo.png';
 
 const navbar = () => {
     return (
-
         <div className="navbar">
-            <img class="dinologo" src={dinoLogo} />
+            <img className="dinologo" src={dinoLogo} />
             <h1>DinoSpace</h1>
             <div className="links">
                 <a href="/SignUp">Sign Up</a>
