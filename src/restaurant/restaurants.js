@@ -6,6 +6,7 @@ import dine4 from './images/dine4.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 
+
 const restaurant = () => {
     return (
         <div className="restaurant">
