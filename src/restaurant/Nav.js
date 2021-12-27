@@ -1,19 +1,19 @@
 import Navbar from 'react-bootstrap/Navbar'
+import dinoLogo from './images/dinoLogo.png';
 import { Container, Nav } from "react-bootstrap";
+import {Link} from "react-router-dom";
 const Nav_info = () => {
     return (
-        <div className="navbar">
-            <Navbar sticky="top" bg="light" variant="light">
-                <Container>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#">Overview</Nav.Link>
-                        <Nav.Link href="#">Photos</Nav.Link>
-                        <Nav.Link href="#">Menu</Nav.Link>
-                        <Nav.Link href="#">Reviews</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
-        </div>
+        <Navbar sticky="top" bg="light" variant="light">
+    <Container>
+    <Nav className="me-auto">
+            <a href="#overview">Overview</a>
+            <a href="#interior">Interior</a>
+            <a href="#interior">Menu</a>
+            <a href="#menu">Reviews</a>
+    </Nav>
+    </Container>
+  </Navbar>
     );
 }
 

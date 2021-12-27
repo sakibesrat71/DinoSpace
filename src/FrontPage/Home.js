@@ -14,10 +14,16 @@ const Home = () => {
     }, []);
     return (
         <div className="home">
+            <div data-aos="fade-right" className="fade">
             <Navbar />
+            </div>
+            
+            <div data-aos="fade-up" className="fade">
             <img src={dine} />
             <p className='moto'>NEVER WAIT TO EAT AGAIN</p>
             <Searchbar />
+            </div>
+            
             <div data-aos="fade-up" className="fade">
                 <Restaurant />
             </div>
