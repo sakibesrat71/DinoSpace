@@ -1,0 +1,35 @@
+div.profile{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+img.card-img-top.profileImg{
+    width:200px;
+}
+img.rounded-circle{
+    height: 100px;
+    width: 100px;
+}
+div.profileCard.card{
+    width:400px;
+    height:400px;
+    padding:40px;
+    justify-content: center;
+    background-color: rgb(228, 224, 220);
+}
+.cardImg{
+    margin-left: 35%;
+}
+
+div.mobile.col-md-5{
+    padding: 0px;
+}
+div.name.card-title.h5{
+       margin-left: 30%;     
+}
+p.address.card-text{
+    width:200px;
+}
+.btn-info{
+    margin-left: 21%;
+}

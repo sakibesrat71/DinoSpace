@@ -1,5 +1,5 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import img from "./login4.jpg";
+import img from "./login5.jpg";
 import "../css/auth.css";
 import userIcon from "./user.png";
 import Aos from "aos";

@@ -1,4 +1,4 @@
-import dine from './images/dine2.jpg';
+import dine from './images/dine6.jpg';
 import Navbar from './navbar';
 import Footer from './Footer.js';
 import Searchbar from './search';
