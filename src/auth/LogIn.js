@@ -10,6 +10,21 @@ const LogIn = () => {
     useEffect(() => {
         Aos.init({ duration: 1500 });
     }, []);
+    
+    const[user, setUser] = useState({
+        name:"",email:"",phone:"",pass:""
+    });
+
+    let name, value;
+
+    const handleInputs = (e) =>{
+        console.log(e);
+        name= e.target.name;
+        value= e.target.value;
+
+        setUser({...user, [name]:value});
+    }
+
     return (
         <Container>
             <Row>
@@ -28,10 +43,10 @@ const LogIn = () => {
                                     <img className="user" src={userIcon} />
                                 </div>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={user.email} onChange={handleInputs}/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control type="password" placeholder="Password" name="pass" id="pass" value={user.pass} onChange={handleInputs}/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" label="Remember me" />
