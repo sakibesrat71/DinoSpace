@@ -52,7 +52,7 @@ const Restaurant = () => {
                     </Col>
 
                     <Col className="Reservation" md={6} sm={12}>
-                        <Card className="position-sticky" >
+                        <Card className="Reservation" >
                             <Card.Title>Reservation</Card.Title>
                             <Card.Body>
 

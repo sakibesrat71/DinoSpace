@@ -1,6 +1,7 @@
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import img from "./login5.jpg";
-import img2 from "./bg.jpg";
+import dinoLogo from './dinoLogo.png';
+import img2 from "./bg2.jpg";
 import "../css/profile.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -12,10 +13,25 @@ const Profile = () => {
     }, []);
     return (
         <div className="background">
+            {/* <Navbar2 /> */}
             <img className="bg" src={img2} />
+            <a href="/" className='navlogo'>
+                <div data-aos="fade-right" className="fade">
+                    <img className="dinologo" src={dinoLogo} />
+                </div>
+            </a>
+            
+            <div className="links2">
+                <a href="/SignUp">Sign Up</a>
+                <a href="/LogIn">Sign In</a>
+                <a href="/Profile">Profile</a>
+            </div>
+
+
+
             <div className="profile">
-            <div data-aos="fade-up" className="fade">
-                
+                <div data-aos="fade-up" className="fade">
+
                     <Card className="profileCard">
                         <div className="cardImg">
                             <Card.Img class="rounded-circle" variant="top" src={img} />

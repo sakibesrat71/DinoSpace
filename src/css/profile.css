@@ -1,5 +1,5 @@
 div.profile{
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 35%;
 }
@@ -32,4 +32,35 @@ p.address.card-text{
 }
 .btn-info{
     margin-left: 21%;
+}
+a.navlogo{
+    position: fixed;
+    top: 2%;
+    left: 2%;
+
+}
+/* div.navbar2{
+    position: fixed;
+    top: 1%;
+} */
+.links2 {
+    display: flex;
+    text-align: center;
+    max-width: auto;
+    position: fixed;
+    top:2%;
+    left: 75%;
+}
+.links2 a{
+    font-size: 20px;
+    text-align: center;
+color: rgb(240, 254, 255);
+  margin-top: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 10px;
+  }
+
+  a:hover {
+    color: #35dbf1;
 }
