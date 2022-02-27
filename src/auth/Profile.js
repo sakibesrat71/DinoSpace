@@ -30,7 +30,7 @@ const Profile = () => {
 
 
             <div className="profile">
-                <div data-aos="fade-up" className="fade">
+                <div data-aos="zoom-in-up" className="fade">
 
                     <Card className="profileCard">
                         <div className="cardImg">

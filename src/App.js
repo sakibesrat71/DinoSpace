@@ -1,6 +1,8 @@
 import './css/index.css';
 import Home from './FrontPage/Home';
 import LogIn from './auth/LogIn';
+import UserSignIn from './auth/UserSignIn';
+import UserSignUp from './auth/UserSignUp';
 import Profile from './auth/Profile';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from './auth/SignUp';
@@ -16,10 +18,10 @@ function App() {
           <Home />
         </Route>
         <Route path="/UserSignIn">
-          <LogIn />
+          <UserSignIn />
         </Route>
         <Route path="/UserSignUp">
-          <LogIn />
+          <UserSignUp />
         </Route>
         <Route path="/LogIn">
           <LogIn />
