@@ -17,10 +17,10 @@ const Restaurant = () => {
     return (
         <div className="restaurant">
             <div data-aos="fade-right" className="fade">
-            <Navbar />
-            <div className="img"><img className="res-img" src={dine3} /></div>
+                <Navbar />
+                <div className="img"><img className="res-img" src={dine3} /></div>
             </div>
-            
+
             <Container>
                 <Row>
                     <Col className="Navigation" md={6} sm={12}>
@@ -34,8 +34,8 @@ const Restaurant = () => {
                             <h1>Interior</h1>
                             <br />
                             <Carousel>
-                <Carousel.Item><img className="restaurant-interior" src={dine} /></Carousel.Item> <Carousel.Item><img className="restaurant-interior" src={dine3} /></Carousel.Item> <Carousel.Item><img className="restaurant-interior" src={dine4} /></Carousel.Item>
-                </Carousel>
+                                <Carousel.Item><img className="restaurant-interior" src={dine} /></Carousel.Item> <Carousel.Item><img className="restaurant-interior" src={dine3} /></Carousel.Item> <Carousel.Item><img className="restaurant-interior" src={dine4} /></Carousel.Item>
+                            </Carousel>
                         </div>
                         <div className="menu" id="menu">
                             <h1>Menu</h1>
@@ -52,7 +52,7 @@ const Restaurant = () => {
                     </Col>
 
                     <Col className="Reservation" md={6} sm={12}>
-                        <Card className="position-sticky" >
+                        <Card className="Reservation" >
                             <Card.Title>Reservation</Card.Title>
                             <Card.Body>
 
@@ -60,17 +60,17 @@ const Restaurant = () => {
                                     Fill up the form for reservation.
                                 </Card.Text>
                                 <Form.Group className="mb-3">
-                                <Form.Control type="date" name='date_of_birth' />
+                                    <Form.Control type="date" className='date' />
 
                                 </Form.Group>
                                 <Form.Group className="mb-3">
-                                <Form.Control type="number" placeholder="Enter total diners" />
-                                    
+                                    <Form.Control type="number" placeholder="Enter total diners" className="time" />
+
                                 </Form.Group>
 
                                 <Form.Group className="mb-3">
-                                <Form.Control type="time"  />
-                                    
+                                    <Form.Control type="time"  className="time"/>
+
                                 </Form.Group>
                                 <Button variant="primary">Reserve</Button>
                             </Card.Body>

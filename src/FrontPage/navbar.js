@@ -7,9 +7,9 @@ const navbar = () => {
             <a href="/" className='home-link'><img className="dinologo" src={dinoLogo} /></a>
             <h1>DinoSpace</h1>
             <div className="links">
-                <a href="/SignUp">Sign Up</a>
-                <a href="/LogIn">Sign In</a>
-                <a href="/">Contact Us</a>
+                <a href="/UserSignUp">Sign Up</a>
+                <a href="/UserSignIn">Sign In</a>
+                <a href="/Profile">Profile</a>
             </div>
         </div>
     );

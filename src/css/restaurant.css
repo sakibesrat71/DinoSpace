@@ -25,3 +25,15 @@ img.restaurant-interior{
 div.Navigation.col-md-6.col-sm-12{
     padding: 50px;
 }
+
+.date.form-control{
+    width: 65%;
+}
+
+.time.form-control{
+    width: 65%;
+}
+
+.Reservation.card{
+    position: sticky;
+}
