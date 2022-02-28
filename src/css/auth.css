@@ -24,3 +24,11 @@ Form{
 .form-control{
     width:100%;
 }
+
+p.emnei{
+    padding: 10px;
+    margin-left: 30%;
+}
+svg{
+    margin-left: 45%;
+}
