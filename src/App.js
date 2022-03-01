@@ -1,6 +1,7 @@
 import './css/index.css';
 import Home from './FrontPage/Home';
 import LogIn from './auth/LogIn';
+import SearchResult from './components/searchResult';
 import UserSignIn from './auth/UserSignIn';
 import UserSignUp from './auth/UserSignUp';
 import Profile from './auth/Profile';
@@ -16,6 +17,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/SearchResult">
+          <SearchResult />
         </Route>
         <Route path="/UserSignIn">
           <UserSignIn />

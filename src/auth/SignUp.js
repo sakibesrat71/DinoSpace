@@ -7,25 +7,49 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useState } from "react";
+import axios from "axios";
+
 
 const SignUp = () => {
     useEffect(() => {
         Aos.init({ duration: 1500 });
     }, []);
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const [user, setUser] = useState({
-        name: "", email: "", phone: "", pass: "", rpass: ""
-    });
 
-    let name, value;
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            const config = {
+                headers: {
+                    "Content-type": "application/json"
+                }
+            }
 
-    const handleInputs = (e) => {
-        console.log(e);
-        name = e.target.name;
-        value = e.target.value;
+            setLoading(true)
 
-        setUser({ ...user, [name]: value });
-    }
+            const { data } = await axios.post('/api/users/registration', {
+                name,
+                phone,
+                email,
+                password,
+                confirmPassword
+            }, config);
+
+            console.log(data);
+            localStorage.setItem('userInfo',JSON.stringify(data));
+            setLoading(false);
+        } catch (error) {
+            setError(error.response.data.message);
+        }
+    };
+   
     return (
         <Container>
             <Row>
@@ -38,25 +62,25 @@ const SignUp = () => {
                 </Col>
                 <Col md={6} sm={12}>
                     <div className="justify-content-md-center">
-                        <Form>
+                        <Form onSubmit={submitHandler}>
                             <div data-aos="fade-up" className="fade">
                                 <div className="text-center">
                                     <img className="user" src={userIcon} />
                                 </div>
                                 <Form.Group className="mb-3">
-                                    <Form.Control type="text" name="name" placeholder="Enter Name" id="name" value={user.name} onChange={handleInputs} />
+                                    <Form.Control type="text" name="name" placeholder="Enter Name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
-                                    <Form.Control type="text" placeholder="Enter Mobile Number" name="phone" id="phone" value={user.phone} onChange={handleInputs} />
+                                    <Form.Control type="text" placeholder="Enter Mobile Number" name="phone" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={user.email} onChange={handleInputs} />
+                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control type="password" placeholder="Password" name="pass" id="pass" value={user.pass} onChange={handleInputs} />
+                                    <Form.Control type="password" placeholder="Password" name="pass" id="pass" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control type="password" placeholder="Repeat Password" name="rpass" id="rpass" value={user.rpass} onChange={handleInputs} />
+                                    <Form.Control type="password" placeholder="Repeat Password" name="rpass" id="rpass" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                                 </Form.Group>
                                 <Button variant="primary" type="submit">
                                     Submit

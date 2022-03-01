@@ -6,25 +6,44 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import { useState } from "react";
+import axios from "axios";
 
 const LogIn = () => {
     useEffect(() => {
         Aos.init({ duration: 1500 });
     }, []);
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            const config = {
+                headers: {
+                    "Content-type": "application/json"
+                }
+            }
+
+            setLoading(true)
+
+            const { data } = await axios.post('/api/users/login', {
+                email,
+                password
+            }, config);
+
+            console.log(data);
+            localStorage.setItem('userInfo',JSON.stringify(data));
+            setLoading(false);
+        } catch (error) {
+            setError(error.response.data.message);
+        }
+    };
     
-    const[user, setUser] = useState({
-        name:"",email:"",phone:"",pass:""
-    });
 
-    let name, value;
-
-    const handleInputs = (e) =>{
-        console.log(e);
-        name= e.target.name;
-        value= e.target.value;
-
-        setUser({...user, [name]:value});
-    }
 
     return (
         <Container>
@@ -38,16 +57,18 @@ const LogIn = () => {
                 </Col>
                 <Col md={6} sm={12}>
                     <div className="justify-content-md-center">
-                        <Form>
+                        {/* {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+                        {loading && <Loading />} */}
+                        <Form onSubmit={submitHandler}>
                             <div data-aos="fade-up" className="fade">
                                 <div className="text-center">
                                     <img className="user" src={userIcon} />
                                 </div>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={user.email} onChange={handleInputs}/>
+                                    <Form.Control type="email" placeholder="Enter email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control type="password" placeholder="Password" name="pass" id="pass" value={user.pass} onChange={handleInputs}/>
+                                    <Form.Control type="password" placeholder="Password" name="pass" id="pass" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" label="Remember me" />
@@ -58,7 +79,7 @@ const LogIn = () => {
                                 <Button variant="primary" type="submit">
                                     Submit
                                 </Button>
-                                <br/>
+                                <br />
                                 <p className="emnei">Or sign in using</p>
                                 {/* <i class="bi bi-facebook"></i> */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">

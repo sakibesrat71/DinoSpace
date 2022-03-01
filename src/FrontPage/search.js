@@ -6,7 +6,7 @@ import '../css/index.css';
 import {Form, FormControl, Button} from 'react-bootstrap';
 
 
-const Searchbar = () => {
+const Searchbar = (props) => {
 
   const [restaurentDetails,setRestaurentDetails] = useState([])
 
@@ -42,7 +42,7 @@ const Searchbar = () => {
           {
             restaurentDetails.map(restaurent=>(
               <li key={restaurent._id}>
-              {restaurent.name}
+              {props.restaurent.name}
               <Link to={`/restaurant/${restaurent._id}`}>View Details</Link>
               </li>
             ))
