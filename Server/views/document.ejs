@@ -1,0 +1,28 @@
+<html>
+<body>
+<p id = 'paragraph1'>hello donno why this not working</p>
+<img src="https://m.media-amazon.com/images/M/MV5BMWIzM2Y1OTYtOWZkYy00NmE3LWEyYjktY2RiY2MyMWFmNWNjXkEyXkFqcGdeQWFybm8@._V1_.jpg", alt="withcer", id="myImage">
+
+<script>
+    function myFunc()
+    {
+        document.getElementById('paragraph1').innerHTML="hello this is working now"
+    }
+
+    function noPicture()
+    {
+        alert("No image to show man, sorry")
+    }
+</script>
+<p>
+<script>
+    const d = new Date();
+    document.write(d);
+    // console.log(d.getTime);
+</script>
+</p>
+<button onclick="myFunc()">Click if working</button>
+<button onclick="noPicture()">Click if not working</button>
+</body>
+
+</html>
