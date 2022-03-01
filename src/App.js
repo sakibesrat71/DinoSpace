@@ -8,6 +8,7 @@ import Profile from './auth/Profile';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignUp from './auth/SignUp';
 import Restaurant from './restaurant/Restaurant';
+import RestaurantSignUp from './auth/RestaurantSignUp';
 
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/UserSignIn">
           <UserSignIn />
+        </Route>
+        <Route path="/RestaurantSignUp">
+          <RestaurantSignUp />
         </Route>
         <Route path="/UserSignUp">
           <UserSignUp />
