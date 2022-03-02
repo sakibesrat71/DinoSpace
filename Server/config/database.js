@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const findOrCreate = require('mongoose-findorcreate');
 const bcrypt = require("bcrypt")
-mongoose.connect('mongodb://localhost:27017/passport');
+mongoose.connect('mongodb://localhost:27017/Auth');
 
 const userSchema = mongoose.Schema({
     name: {
@@ -21,6 +21,7 @@ const userSchema = mongoose.Schema({
          type: String,
          require: true
       },
+      facebookID: String
     },
 
     {
@@ -45,4 +46,4 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   
  const User = mongoose.model("User", userSchema);
   
-export default User;
+module.exports = User;

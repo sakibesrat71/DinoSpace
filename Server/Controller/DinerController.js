@@ -1,19 +1,19 @@
 const asyncHandler = require("express-async-handler")
-
 const User = require("../config/database")
-
+const generateToken = require("../Utilitiy/JWT-imp");
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, cpassword, mobile } = req.body;
-    res.json({
-        name,
-        password
-    });
-    const userExists = await User.findOne({ email });
+
+    const usernameExists = await User.findOne({ name });
+    const emailExists = await User.findOne({email});
   
-    if (userExists) {
+    if (usernameExists) {
       res.status(404);
-      throw new Error("User already exists");
+      throw new Error("Username has already been taken");
+    }else if(emailExists){
+        res.status(404);
+      throw new Error("An account already exists under this email");
     }
   
     const user = await User.create({
@@ -30,12 +30,32 @@ const registerUser = asyncHandler(async (req, res) => {
         name: user.name,
         email: user.email,
         mobile: user.mobile,
-        // token: generateToken(user._id),
+        token: generateToken(user._id),
       });
     } else {
       res.status(400);
-      throw new Error("User not found");
+      throw new Error("User cannot be created");
     }
 });
 
-module.exports = {registerUser};
+const authUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+  
+    const user = await User.findOne({ email });
+  
+    if (user && (await user.matchPassword(password))) {
+      res.json({
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        mobile: user.mobile,
+        token: generateToken(user._id),
+      });
+    } else {
+      res.status(401);
+      throw new Error("Invalid Email or Password");
+    }
+  });
+  
+
+module.exports = {registerUser, authUser};
