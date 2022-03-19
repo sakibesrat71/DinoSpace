@@ -1,0 +1,44 @@
+.container{
+    margin:0;
+    padding: 0;
+    max-width: fit-content;
+}
+.col{
+    padding: 0;
+    /* background-color: rgb(41, 39, 39); */
+}
+/* .right{
+    margin-top:20%;
+    margin-left:40%;
+} */
+.user{
+    width: 80px;
+    height:80px;
+    margin-bottom:2rem;
+    /* padding-left: 20px; */
+}
+Form{
+    padding-left: 50px;
+    padding-top: 0px;
+}
+.form-control{
+    width:120%;
+}
+
+p.emnei{
+    padding: 10px;
+    margin-left: 30%;
+    color: antiquewhite;
+}
+
+p.hudai{
+    color: antiquewhite;
+}
+svg{
+    margin-left: 60%;
+}
+img.user{
+    border-color: white;
+    border-radius: 50%;
+    margin-left: 10%;
+}
