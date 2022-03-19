@@ -17,11 +17,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
       },
-      mobile: {
-         type: String,
-         require: true
+      token:{
+        type: String
       },
-      facebookID: String
+
     },
 
     {

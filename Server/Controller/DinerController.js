@@ -56,6 +56,11 @@ const authUser = asyncHandler(async (req, res) => {
       throw new Error("Invalid Email or Password");
     }
   });
+
+  const reserveUser = asyncHandler(async (req, res) => {
+    res.status(200).json({msg: 'you are authorized'})
+    console.log('I am here');
+  })
   
 
-module.exports = {registerUser, authUser};
+module.exports = {registerUser, authUser, reserveUser};

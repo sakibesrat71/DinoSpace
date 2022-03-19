@@ -44,15 +44,14 @@ const corsOptions = {
     }
 };
 app.use(cors(corsOptions));
-app.set('view-engine', 'js')
 app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/passport', collectionName: "sessions" }),
-    cookie: {                   //this cookie has a timer for 1 day after which session will expire
-        maxAge: 24 * 60 * 60 * 1000  //24 hours //the maxAge element stores value in miliseconds 
+    cookie: {
+        expires: 60*60*24,
     }
 }))
 app.use(express.urlencoded({ extended: true }))  //allows us to post something to our server
@@ -60,13 +59,12 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
+app.use("/api/users", userRoutes);  
 
-
-app.use("/api/users", userRoutes);
 passport.use(new FacebookStrategy({
     clientID: process.env.CLIENT_ID_FB,
     clientSecret: process.env.CLIENT_SECRET_FB,
-    callbackURL: "http://localhost:3000/auth/facebook/profile"
+    callbackURL: "http://localhost:3000/auth/facebook/"
 },
     function (accessToken, refreshToken, profile, cb) {
         userModel.findOrCreate({ facebookId: profile.id }, function (err, user) {
@@ -75,17 +73,17 @@ passport.use(new FacebookStrategy({
     }
 ));
 
-app.get('/auth/facebook/',
+app.get('/auth/facebook',
     passport.authenticate('facebook', { scope: 'email' }));
 
-app.get('http://localhost:3000/profile',
-    passport.authenticate('facebook', { failureRedirect: 'http://localhost:3000/api/users/login' }),
+app.get('http://localhost:3000/auth/facebook/',
+    passport.authenticate('facebook', { failureRedirect: '/api/users/login' }),
     function (req, res) {
         // Successful authentication, redirect home.
         console.log(req.isAuthenticated())
         console.log("I am here");
         res.status({message: success});
-        res.redirect("http://localhost:3000/profile");
+        res.redirect("http://localhost:3000/auth/facebook/");
     });
 
 passport.use(new MicrosoftStrategy({
@@ -187,12 +185,12 @@ function checkIsAuthenticated(req, res, next) {
     res.status(401).send({ msg: 'You Sir are an Unauthorized Nigger' })
 }
 
-// function checkIsNotAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return res.redirect('/')
-//     }
-//     next()
-// }
+function checkIsNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/')
+    }
+    next()
+}
 
 
 // app.delete('/logout', (req, res) => {
